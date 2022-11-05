@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyCSlxo6j4xmQZIkn_UIhjDU1dfcuu8lwIQ",
+    authDomain: "cart-project-1026.firebaseapp.com",
+    projectId: "cart-project-1026",
+    storageBucket: "cart-project-1026.appspot.com",
+    messagingSenderId: "303355439357",
+    appId: "1:303355439357:web:2d80d1f01ba67e0a6a3694"
+};
+
+// Use this to initialize the firebase App
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+// Use these for db
+const db = firebaseApp.firestore();
+
+export { db };
+
+ReactDOM.render(<App />, document.getElementById("root"));
+

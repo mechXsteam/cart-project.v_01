@@ -9,7 +9,7 @@ const Cart = (props) => {
                 return (
                     <Cartitem
                         product={product}
-                        key={product.id}
+                        key={product.key}
                         onIncreaseQuantity={props.onIncreaseQuantity}
                         onDecreaseQuantity={props.onDecreaseQuantity}
                         onDeleteProduct={props.onDeleteProduct}
